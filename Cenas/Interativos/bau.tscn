@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://5yqgfvkwpvnt"]
+
+[ext_resource type="Texture2D" uid="uid://bsgr0ct7lil1b" path="res://Recursos/Objetos/LittleTreasureChest.png" id="1_2xs7l"]
+[ext_resource type="Script" path="res://Scripts/Interativos/bau.gd" id="1_20jq4"]
+[ext_resource type="Texture2D" uid="uid://cc2s2jsay7sex" path="res://Recursos/UI/Dialogo/Interacao/emote22.png" id="3_t2ejq"]
+[ext_resource type="PackedScene" uid="uid://rv7m6w2pf13e" path="res://Cenas/Interativos/area_interacao.tscn" id="4_v2cbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41xn5"]
+size = Vector2(11, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1rim"]
+radius = 16.0
+
+[node name="Baú" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_20jq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2xs7l")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_41xn5")
+
+[node name="exclamacao" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -14)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_t2ejq")
+
+[node name="area_interacao" parent="." instance=ExtResource("4_v2cbl")]
+nome_acao = "abrir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_interacao"]
+shape = SubResource("CircleShape2D_t1rim")

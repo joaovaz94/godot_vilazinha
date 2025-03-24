@@ -1,0 +1,11 @@
+{
+	"texto_base" : {
+		"texto": ["Olá, jovenzinho",
+				"Finalmente acordou, né?",
+				"Bom, nada aconteceu aqui por hoje ainda"],
+	},
+
+	"texto_final" : {
+		"texto": [ "Nossa, que dia chato" ]
+	},
+}

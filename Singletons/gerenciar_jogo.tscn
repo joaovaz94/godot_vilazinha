@@ -1,0 +1,182 @@
+[gd_scene load_steps=11 format=3 uid="uid://oteusyojrov"]
+
+[ext_resource type="Script" path="res://Singletons/gerenciar_jogo.gd" id="1_etlri"]
+[ext_resource type="FontFile" uid="uid://lu4lanoyhxqs" path="res://Recursos/Fontes/NormalFont.ttf" id="2_ccd6f"]
+[ext_resource type="PackedScene" uid="uid://bp1njw02etaj4" path="res://Cenas/UI/ui_geral.tscn" id="3_0ehks"]
+[ext_resource type="PackedScene" uid="uid://84ckxmq8wu3h" path="res://Cenas/UI/inventario.tscn" id="4_671w5"]
+[ext_resource type="PackedScene" uid="uid://r0kc2n7q3ip2" path="res://Cenas/UI/container_coracao.tscn" id="5_qwsig"]
+[ext_resource type="PackedScene" uid="uid://ccwiu66drevrf" path="res://Cenas/UI/menu_missoes.tscn" id="6_b11bf"]
+[ext_resource type="PackedScene" uid="uid://df07m7qymt1qf" path="res://Cenas/UI/menu_jogo.tscn" id="7_6mxg6"]
+[ext_resource type="Texture2D" uid="uid://bsjknvkpewrai" path="res://Recursos/UI/Inventario/InventoryRect.png" id="8_qlf8a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_80u8w"]
+font = ExtResource("2_ccd6f")
+font_size = 21
+
+[sub_resource type="LabelSettings" id="LabelSettings_darny"]
+font = ExtResource("2_ccd6f")
+font_size = 18
+
+[node name="Gerenciar_Jogo" type="Node"]
+script = ExtResource("1_etlri")
+
+[node name="Alertas_UI" type="CanvasLayer" parent="."]
+
+[node name="indica_missao" type="Control" parent="Alertas_UI"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Alertas_UI/indica_missao"]
+layout_mode = 0
+offset_left = -175.0
+offset_top = -40.0
+offset_right = 18.0
+offset_bottom = 13.0
+color = Color(0.827451, 0.52549, 0.372549, 1)
+
+[node name="Label" type="Label" parent="Alertas_UI/indica_missao/ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 11.0
+offset_right = 164.0
+offset_bottom = 39.0
+text = "Nova   Missão"
+label_settings = SubResource("LabelSettings_80u8w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UI_Geral" parent="." instance=ExtResource("3_0ehks")]
+process_mode = 3
+follow_viewport_enabled = false
+
+[node name="Inventario" parent="UI_Geral" instance=ExtResource("4_671w5")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -167.0
+offset_right = -132.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+
+[node name="ContainerCoracao" parent="UI_Geral" instance=ExtResource("5_qwsig")]
+scale = Vector2(3, 3)
+
+[node name="menu_missoes" parent="UI_Geral" instance=ExtResource("6_b11bf")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -166.0
+offset_right = 264.0
+offset_bottom = 166.0
+
+[node name="menuJogo" parent="UI_Geral" instance=ExtResource("7_6mxg6")]
+custom_minimum_size = Vector2(528, 332)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="tabMissoes" type="NinePatchRect" parent="UI_Geral"]
+z_index = -1
+offset_left = 323.0
+offset_top = 122.0
+offset_right = 453.0
+offset_bottom = 162.0
+texture = ExtResource("8_qlf8a")
+region_rect = Rect2(0, 0, 20, 20)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="UI_Geral/tabMissoes"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 98.0
+offset_bottom = 29.0
+text = "Missoes"
+label_settings = SubResource("LabelSettings_darny")
+
+[node name="tabInventario" type="NinePatchRect" parent="UI_Geral"]
+z_index = -1
+offset_left = 453.0
+offset_top = 122.0
+offset_right = 583.0
+offset_bottom = 162.0
+texture = ExtResource("8_qlf8a")
+region_rect = Rect2(0, 0, 20, 20)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="UI_Geral/tabInventario"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 120.0
+offset_bottom = 30.0
+text = "Inventário"
+label_settings = SubResource("LabelSettings_darny")
+
+[node name="tabMenu" type="NinePatchRect" parent="UI_Geral"]
+z_index = -1
+offset_left = 583.0
+offset_top = 122.0
+offset_right = 713.0
+offset_bottom = 162.0
+texture = ExtResource("8_qlf8a")
+region_rect = Rect2(0, 0, 20, 20)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="UI_Geral/tabMenu"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 6.0
+offset_right = 88.0
+offset_bottom = 30.0
+text = "Menu
+"
+label_settings = SubResource("LabelSettings_darny")
+
+[node name="cobreTabMissoes" type="ColorRect" parent="UI_Geral"]
+offset_left = 323.0
+offset_top = 122.0
+offset_right = 453.0
+offset_bottom = 158.0
+color = Color(0.588235, 0.32549, 0.25098, 0.823529)
+
+[node name="cobreTabInventario" type="ColorRect" parent="UI_Geral"]
+offset_left = 453.0
+offset_top = 122.0
+offset_right = 583.0
+offset_bottom = 158.0
+color = Color(0.588235, 0.32549, 0.25098, 0.823529)
+
+[node name="cobreTabMenu" type="ColorRect" parent="UI_Geral"]
+offset_left = 583.0
+offset_top = 122.0
+offset_right = 713.0
+offset_bottom = 161.0
+color = Color(0.588235, 0.32549, 0.25098, 0.823529)

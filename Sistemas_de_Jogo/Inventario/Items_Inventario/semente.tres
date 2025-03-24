@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInventario" load_steps=3 format=3 uid="uid://cctnfdhbmq8w"]
+
+[ext_resource type="Script" path="res://Scripts/Sistemas_de_Jogo/Item_Inventario.gd" id="1_5qqlf"]
+[ext_resource type="Texture2D" uid="uid://dcekk8v23xixo" path="res://Recursos/Objetos/SeedBig3.png" id="2_7p5tn"]
+
+[resource]
+script = ExtResource("1_5qqlf")
+nome = "semente"
+textura = ExtResource("2_7p5tn")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bamdqxn0p5vgr"]
+
+[ext_resource type="Script" path="res://Scripts/Personagens_NPC/velhinho_1.gd" id="1_78e1a"]
+[ext_resource type="Texture2D" uid="uid://ckv27lw6tcvia" path="res://Recursos/Personagens/NPCs/velhinho/SpriteSheet.png" id="1_rkv3q"]
+[ext_resource type="PackedScene" uid="uid://rv7m6w2pf13e" path="res://Cenas/Interativos/area_interacao.tscn" id="2_yg2de"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2ibg"]
+size = Vector2(12, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0uehc"]
+
+[node name="velhinho1" type="CharacterBody2D" groups=["NPC"]]
+script = ExtResource("1_78e1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rkv3q")
+hframes = 4
+vframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_f2ibg")
+
+[node name="area_interacao" parent="." instance=ExtResource("2_yg2de")]
+nome_acao = "falar"
+tipo_de_interacao = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_interacao"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_0uehc")
+debug_color = Color(0.8962, 0.312515, 0.142843, 0.42)

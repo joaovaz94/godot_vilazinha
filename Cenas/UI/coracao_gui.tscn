@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnulyvcm4o5s6"]
+
+[ext_resource type="Texture2D" uid="uid://djiaoekb6gnak" path="res://Recursos/UI/Vida/heart.png" id="1_f5tbr"]
+[ext_resource type="Script" path="res://Scripts/UI/coracao_gui.gd" id="1_lstf8"]
+
+[node name="coracaoGUI" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 13)
+offset_right = 16.0
+offset_bottom = 13.0
+script = ExtResource("1_lstf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_f5tbr")
+centered = false
+hframes = 5
+frame = 4

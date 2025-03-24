@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://84ckxmq8wu3h"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ui_inventario.gd" id="1_8f66l"]
+[ext_resource type="Texture2D" uid="uid://bsjknvkpewrai" path="res://Recursos/UI/Inventario/InventoryRect.png" id="1_qncmd"]
+[ext_resource type="PackedScene" uid="uid://t6yoceeg0pfc" path="res://Cenas/UI/espaco_item.tscn" id="2_5y82v"]
+[ext_resource type="Texture2D" uid="uid://ca38qlu1p80i8" path="res://Recursos/UI/Inventario/hotbar_selector.png" id="4_i5yad"]
+
+[node name="Inventario" type="Control"]
+custom_minimum_size = Vector2(132, 83)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 83.0
+script = ExtResource("1_8f66l")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 83.0
+texture = ExtResource("1_qncmd")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -34.0
+offset_right = 58.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="espaco_item" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item13" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item14" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="espaco_item15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_5y82v")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("4_i5yad")
+centered = false

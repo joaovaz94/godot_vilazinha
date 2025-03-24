@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://t6yoceeg0pfc"]
+
+[ext_resource type="Texture2D" uid="uid://cbi7jor7f4c2c" path="res://Recursos/UI/Inventario/inventorySlot.png" id="1_i7gba"]
+[ext_resource type="Script" path="res://Scripts/UI/ui_espaco_item.gd" id="1_n6arh"]
+
+[node name="espaco_item" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_n6arh")
+
+[node name="Fundo_Item" type="Sprite2D" parent="."]
+texture = ExtResource("1_i7gba")
+centered = false
+vframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Imagem_item" type="Sprite2D" parent="CenterContainer/Panel"]

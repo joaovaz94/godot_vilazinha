@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInventario" load_steps=3 format=3 uid="uid://dhk0muvm5leq4"]
+
+[ext_resource type="Script" path="res://Scripts/Sistemas_de_Jogo/Item_Inventario.gd" id="1_uijwe"]
+[ext_resource type="Texture2D" uid="uid://bthgsd6ul00vx" path="res://Recursos/Objetos/SilverCup.png" id="2_5jn82"]
+
+[resource]
+script = ExtResource("1_uijwe")
+nome = "tacinha"
+textura = ExtResource("2_5jn82")

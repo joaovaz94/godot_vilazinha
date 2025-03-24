@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8hftok5ulwn2"]
+
+[ext_resource type="Script" path="res://Scripts/UI/caixa_de_texto.gd" id="1_2jlx0"]
+[ext_resource type="Texture2D" uid="uid://joufvvakd84b" path="res://Recursos/UI/Dialogo/nine_path_panel.png" id="1_en6vd"]
+
+[node name="caixa_de_texto" type="MarginContainer"]
+offset_right = 52.0
+offset_bottom = 43.0
+script = ExtResource("1_2jlx0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_en6vd")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+vertical_alignment = 1
+
+[node name="TempoMostrando" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TempoMostrando" to="." method="_on_tempo_mostrando_timeout"]

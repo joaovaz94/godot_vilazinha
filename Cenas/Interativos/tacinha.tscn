@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://lgplo7rao7rj"]
+
+[ext_resource type="Script" path="res://Scripts/Interativos/tacinha.gd" id="1_75j2j"]
+[ext_resource type="Texture2D" uid="uid://bthgsd6ul00vx" path="res://Recursos/Objetos/SilverCup.png" id="2_5pva8"]
+[ext_resource type="Resource" uid="uid://dhk0muvm5leq4" path="res://Sistemas_de_Jogo/Inventario/Items_Inventario/tacinha.tres" id="2_fxgte"]
+[ext_resource type="PackedScene" uid="uid://rv7m6w2pf13e" path="res://Cenas/Interativos/area_interacao.tscn" id="3_axjyr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6t1y"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gx8og"]
+radius = 11.0
+
+[node name="tacinha" type="Area2D"]
+script = ExtResource("1_75j2j")
+itemResource = ExtResource("2_fxgte")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_k6t1y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5pva8")
+
+[node name="area_interacao" parent="." instance=ExtResource("3_axjyr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_interacao"]
+shape = SubResource("CircleShape2D_gx8og")
+debug_color = Color(0.883556, 0.330002, 0.134947, 0.42)

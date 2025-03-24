@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemVida" load_steps=3 format=3 uid="uid://dcjarn5wovowe"]
+
+[ext_resource type="Script" path="res://Scripts/Interativos/item_vida.gd" id="1_0ibu8"]
+[ext_resource type="Texture2D" uid="uid://esrik2nro1a0" path="res://Recursos/Objetos/LifePot.png" id="2_7b4x8"]
+
+[resource]
+script = ExtResource("1_0ibu8")
+cura_de_vida = 1
+nome = "pocao_vida"
+textura = ExtResource("2_7b4x8")

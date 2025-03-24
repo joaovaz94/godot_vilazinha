@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://by7hrrtclafeq"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ui_espaco_item.gd" id="1_cvgwt"]
+[ext_resource type="Texture2D" uid="uid://ch02xovnnbydq" path="res://Recursos/UI/Inventario/slot_missao.png" id="2_0nsxs"]
+
+[node name="item_missao" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(500, 60)
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_cvgwt")
+
+[node name="FundoMissao" type="Sprite2D" parent="."]
+position = Vector2(251, 31)
+texture = ExtResource("2_0nsxs")
+vframes = 2
+frame = 1
+region_rect = Rect2(0, 0, 19, 19)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FundoMissao"]
+offset_left = -241.0
+offset_top = -23.0
+offset_right = 238.0
+offset_bottom = 27.0
+theme_override_constants/separation = 25
+
+[node name="titulo" type="Label" parent="FundoMissao/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Item pro velhinho"
+
+[node name="descricao" type="RichTextLabel" parent="FundoMissao/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Pegue uma semente para o velhinho
+"
+
+[node name="estado" type="Label" parent="FundoMissao/HBoxContainer"]
+custom_minimum_size = Vector2(70, 20)
+layout_mode = 2
+text = "procurando"

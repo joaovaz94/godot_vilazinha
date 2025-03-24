@@ -1,0 +1,26 @@
+{
+	"texto_base": {
+		"texto": [
+			"Olá, jovenzinho",
+			"Fiquei sabendo que temos um novo aventureiro por aqui",
+			"Boa sorte na sua jornada"
+		]
+	},
+
+	"texto_condicional": {
+		"condicao": {
+			"inventario": [
+				{"tacinha": 1},
+				{"semente": 2}
+			],
+			"missao": [
+				{"pegar_tacinha": {"completa": true}}
+			]}
+		,
+		"texto": [ "Olha, que tacinha bonita!" ]
+	},
+
+	"texto_final": {
+		"texto": [ "Está um belo dia hoje!" ]
+	}
+}

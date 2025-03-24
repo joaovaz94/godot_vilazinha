@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://df2dkapxukv8j"]
+
+[ext_resource type="Script" path="res://Scripts/Interativos/coletavel_geral.gd" id="1_0u4hx"]
+[ext_resource type="Resource" uid="uid://dcjarn5wovowe" path="res://Sistemas_de_Jogo/Inventario/Items_Inventario/pocao_vida.tres" id="2_c0a7f"]
+[ext_resource type="Texture2D" uid="uid://esrik2nro1a0" path="res://Recursos/Objetos/LifePot.png" id="2_isr0o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfu8k"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfgwd"]
+
+[node name="pocao_vida" type="Area2D"]
+script = ExtResource("1_0u4hx")
+itemResource = ExtResource("2_c0a7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_isr0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rfu8k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_yfgwd")
+debug_color = Color(0.841903, 0.377172, 0.154387, 0.42)

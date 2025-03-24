@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsmi6xggfl71y"]
+
+[ext_resource type="Script" path="res://Scripts/Interativos/coletavel_geral.gd" id="1_qsku3"]
+[ext_resource type="Resource" uid="uid://cctnfdhbmq8w" path="res://Sistemas_de_Jogo/Inventario/Items_Inventario/semente.tres" id="2_t78xp"]
+[ext_resource type="Texture2D" uid="uid://dcekk8v23xixo" path="res://Recursos/Objetos/SeedBig3.png" id="2_unqxp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oiuqt"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdohq"]
+
+[node name="semente" type="Area2D"]
+script = ExtResource("1_qsku3")
+itemResource = ExtResource("2_t78xp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_unqxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_oiuqt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bdohq")
+debug_color = Color(0.851696, 0.366182, 0.164621, 0.42)

@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://ejtqi7rnluts"]
+
+[ext_resource type="Texture2D" uid="uid://bsjknvkpewrai" path="res://Recursos/UI/Inventario/InventoryRect.png" id="1_octew"]
+[ext_resource type="PackedScene" uid="uid://by7hrrtclafeq" path="res://Cenas/UI/item_missao.tscn" id="2_0urr7"]
+[ext_resource type="FontFile" uid="uid://lu4lanoyhxqs" path="res://Recursos/Fontes/NormalFont.ttf" id="2_1cm30"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sx7td"]
+font = ExtResource("2_1cm30")
+font_size = 24
+
+[node name="lista_missoes" type="Control"]
+custom_minimum_size = Vector2(528, 332)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -624.0
+offset_bottom = -316.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 528.0
+offset_bottom = 332.0
+texture = ExtResource("1_octew")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 520.0
+offset_bottom = 111.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Missões"
+label_settings = SubResource("LabelSettings_sx7td")
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(512, 277)
+layout_mode = 2
+color = Color(0.588235, 0.32549, 0.25098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/ColorRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+theme_override_constants/separation = 18
+
+[node name="item_missao" parent="NinePatchRect/VBoxContainer/ColorRect/VBoxContainer" instance=ExtResource("2_0urr7")]
+layout_mode = 2
+
+[node name="item_missao5" parent="NinePatchRect/VBoxContainer/ColorRect/VBoxContainer" instance=ExtResource("2_0urr7")]
+layout_mode = 2
+
+[node name="item_missao6" parent="NinePatchRect/VBoxContainer/ColorRect/VBoxContainer" instance=ExtResource("2_0urr7")]
+layout_mode = 2
+
+[node name="item_missao7" parent="NinePatchRect/VBoxContainer/ColorRect/VBoxContainer" instance=ExtResource("2_0urr7")]
+layout_mode = 2
+
+[node name="item_missao2" parent="NinePatchRect/VBoxContainer/ColorRect/VBoxContainer" instance=ExtResource("2_0urr7")]
+layout_mode = 2
+
+[node name="item_missao3" parent="NinePatchRect/VBoxContainer/ColorRect/VBoxContainer" instance=ExtResource("2_0urr7")]
+layout_mode = 2
+
+[node name="item_missao4" parent="NinePatchRect/VBoxContainer/ColorRect/VBoxContainer" instance=ExtResource("2_0urr7")]
+layout_mode = 2

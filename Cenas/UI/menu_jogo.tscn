@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://df07m7qymt1qf"]
+
+[ext_resource type="Script" path="res://Scripts/UI/menu_jogo.gd" id="1_qhswk"]
+[ext_resource type="Texture2D" uid="uid://bsjknvkpewrai" path="res://Recursos/UI/Inventario/InventoryRect.png" id="2_8tery"]
+[ext_resource type="FontFile" uid="uid://lu4lanoyhxqs" path="res://Recursos/Fontes/NormalFont.ttf" id="3_dn6n0"]
+[ext_resource type="Texture2D" uid="uid://ca38qlu1p80i8" path="res://Recursos/UI/Inventario/hotbar_selector.png" id="4_xc5dm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_stdfe"]
+font = ExtResource("3_dn6n0")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_yqvug"]
+line_spacing = 5.0
+font = ExtResource("3_dn6n0")
+font_size = 18
+
+[node name="menuJogo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qhswk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 528.0
+offset_bottom = 332.0
+texture = ExtResource("2_8tery")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 520.0
+offset_bottom = 111.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Menu
+"
+label_settings = SubResource("LabelSettings_stdfe")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(512, 277)
+layout_mode = 2
+color = Color(0.588235, 0.32549, 0.25098, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -54.0
+offset_right = 95.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="opcoes" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/ColorRect/HBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/ColorRect/HBoxContainer/opcoes"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "VOLTAR    PRO    JOGO"
+label_settings = SubResource("LabelSettings_yqvug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="NinePatchRect/VBoxContainer/ColorRect/HBoxContainer/opcoes"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "COMEÇAR    DE    NOVO"
+label_settings = SubResource("LabelSettings_yqvug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="NinePatchRect/VBoxContainer/ColorRect/HBoxContainer/opcoes"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "SAIR"
+label_settings = SubResource("LabelSettings_yqvug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="seletor_missao" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 128.0
+offset_right = 374.0
+offset_bottom = 163.0
+texture = ExtResource("4_xc5dm")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
